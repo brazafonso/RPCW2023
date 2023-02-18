@@ -118,7 +118,7 @@ web_page += """
 </html>"""
 
 
-file = open("site.html","w",encoding='utf-8')
+file = open("mapa_site.html","w",encoding='utf-8')
 file.write(web_page)
 
 
