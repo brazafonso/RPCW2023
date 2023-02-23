@@ -6,13 +6,11 @@ var re = new RegExp("/\\d+")
 http.createServer(function(req, res){
   console.log(req.url)
   var path = ''
-  var cType = ''
+  var cType = 'text/html'
   if(req.url == '/'){
     path = 'arq_site.html'
-    cType = 'text/html'
   }else if(req.url.match(re)){
-    path = 'arq/arq' + req.url.substring(1) + '.xml'
-    cType = 'text/xml'
+    path = 'arq/arq' + req.url.substring(1) + '.html'
   }
   console.log(path)
   fs.readFile(path,function(err,data){
