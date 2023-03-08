@@ -1,0 +1,36 @@
+{
+  "todo": [
+    {
+      "dateDued": "2023-03-08",
+      "who": "teste1",
+      "what": "teste1",
+      "id": 1
+    },
+    {
+      "dateDued": "2023-04-06",
+      "who": "teste4",
+      "what": "teste4",
+      "id": 2
+    },
+    {
+      "dateDued": "2023-05-10",
+      "who": "eudasdadwd",
+      "what": "nada",
+      "id": 4
+    }
+  ],
+  "resolved": [
+    {
+      "dateDued": "2023-03-05",
+      "who": "teste1",
+      "what": "teste1432142342342",
+      "id": 1
+    },
+    {
+      "dateDued": "2023-02-27",
+      "who": "teste5",
+      "what": "teste51324124314",
+      "id": 2
+    }
+  ]
+}
