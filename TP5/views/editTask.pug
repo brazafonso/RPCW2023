@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-blue 
+      h1 Edit Task
+
+    .w3-container.w3-centered.w3-border.w3-border-light-blue(style="height:40em;")
+      form(method="POST" action='/editTask')
+        .w3-row(style="padding: 10% 0")
+          .w3-col(style="width:33%")
+            b Who:
+            input.w3-round(type="text" name="who" value=task.who required)
+          .w3-col(style="width:33%")
+            b What:
+            textarea.w3-round(type="text" name="what" value=task.what required) #{task.what}
+          .w3-col(style="width:33%")
+            b Deadline:
+            input.w3-round(type="date" name="deadline" value=task.dateDued required)
+          input(type="hidden" name="from" value=from)
+          input(type="hidden" name="id" value=task.id)
+
+        .w3-row
+          .w3-col.w3-right-align(style="width:100%")
+            input.w3-button.w3-light-grey(type="submit" name="return" value="Return")
+            input.w3-button.w3-light-grey(type="reset"  value="reset")
+            input.w3-button.w3-light-grey(type="submit" name="save" value="Save")
+    footer.w3-container.w3-blue.w3-bottom
+      h5 Generated in RPCW2023-TPC5 in #{d}
+
+

@@ -64,7 +64,7 @@ exports.spa = function(todo_dic,resolved_dic){
     task = todo_dic[value]
     pagHTML += `
               <tr>
-                <td>${task['who']}</td><td>${task['what']}</td><td>${task['dateDued']}
+                <td>${task['who']}</td><td>${task['what']}</td><td>${task['dateDued']}</td>
                 <form method='GET' action='/editTODO'>
                 <input type='hidden' name="submit" value="${task['id']}" />
                 <td style="width:10%"><input class="w3-round w3-input w3-blue w3-hover-amber" type='submit' name="submit" value="Edit"></td>

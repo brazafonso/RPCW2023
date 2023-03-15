@@ -1,0 +1,97 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-blue 
+      h1 Tasks Lists
+    .w3-container.w3-border.w3-border-light-blue
+      form(method="POST")
+        h2 Create Task
+        .w3-row
+          .w3-col(style="width:33%")
+            b Who:
+            input.w3-round(type="text" name="who" required)
+          .w3-col(style="width:33%")
+            b What:
+            textarea.w3-round(type="text" name="what" required)
+          .w3-col(style="width:33%")
+            b Deadline:
+            input.w3-round(type="date" name="deadline" required)
+        .w3-row
+          .w3-col(style="width:50%")
+            input.w3-button.w3-light-grey(type="submit" name="newtodo" value="+")
+          .w3-col(style="width:10%")
+            input.w3-button.w3-light-grey(type="submit" name="newresolved" value="+")
+          .w3-col.w3-right-align(style="width:40%")
+            input.w3-button.w3-light-grey(type="reset" value="reset")
+      .w3-row
+        .w3-container.w3-half.w3-col
+          h2
+            b To do tasks
+          table.w3-table-all
+            tr
+              th Who
+              th What
+              th Deadline
+            each t in todoList
+              tr
+                td=t.who
+                td=t.what
+                td=t.dateDued
+                form(method='Get' action='/editTask')
+                  input(type='hidden' name='submit' value=t.id)
+                  input(type='hidden' name='from' value='todo')
+                  input(type='hidden' name='to' value='resolved')
+                  td(style="style:10%")
+                    input.w3-round.w3-input.w3-blue.w3-hover-amber(type="submit" name="submit" value="Edit")
+                form(method='POST' action='/deleteTask')
+                  input(type='hidden' name='submit' value=t.id)
+                  input(type='hidden' name='from' value='todo')
+                  input(type='hidden' name='to' value='resolved')
+                  td(style="style:8%")
+                    input.w3-round.w3-input.w3-blue.w3-hover-amber(type="submit" name="submit" value="-")
+                form(method='POST' action='/transferTask')
+                  input(type='hidden' name='submit' value=t.id)
+                  input(type='hidden' name='from' value='todo')
+                  input(type='hidden' name='to' value='resolved')
+                  td(style="style:5%")
+                    input.w3-round.w3-input.w3-blue.w3-hover-amber(type="submit" name="submit" value="->")
+        
+        .w3-container.w3-half.w3-col
+          h2
+            b Resolved tasks
+          table.w3-table-all
+            tr
+              th
+              th 
+              th
+              th Who
+              th What
+              th Deadline
+            each t in resolvedList
+              tr
+                form(method='POST' action='/transferTask')
+                  input(type='hidden' name='submit' value=t.id)
+                  input(type='hidden' name='from' value='resolved')
+                  input(type='hidden' name='to' value='todo')
+                  td(style="style:5%")
+                    input.w3-round.w3-input.w3-blue.w3-hover-amber(type="submit" name="submit" value="<-")
+                form(method='Get' action='/editTask')
+                  input(type='hidden' name='submit' value=t.id)
+                  input(type='hidden' name='from' value='resolved')
+                  input(type='hidden' name='to' value='todo')
+                  td(style="style:10%")
+                    input.w3-round.w3-input.w3-blue.w3-hover-amber(type="submit" name="submit" value="Edit")
+                form(method='POST' action='/deleteTask')
+                  input(type='hidden' name='submit' value=t.id)
+                  input(type='hidden' name='from' value='resolved')
+                  input(type='hidden' name='to' value='todo')
+                  td(style="style:8%")
+                    input.w3-round.w3-input.w3-blue.w3-hover-amber(type="submit" name="submit" value="-")
+                td=t.who
+                td=t.what
+                td=t.dateDued
+    footer.w3-container.w3-blue.w3-bottom
+      h5 Generated in RPCW2023-TPC5 in #{d}
+
+
