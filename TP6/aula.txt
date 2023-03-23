@@ -1,0 +1,95 @@
+MongoDB
+
+comando para ativar base de dados : mongoimport -d <database> -c <collection> --file <file>
+
+documentos aceites:
+
+- json:
+  {doc1}
+  {doc2}
+
+- json:
+  [
+    {doc1},
+    {doc2},
+  ]
+  * flag extra : --jsonArray 
+
+
+
+usando docker:
+  * docker volume create mongodbdata
+  * docker run -d 
+    -p 27017:27017
+    -v mongodbdata:/data/db
+    --name mongo6 mongo:latest
+
+  * docker exec -it mongo6 mongosh
+
+
+aula: 
+  - na shell normal:
+    * mongoimport -d pessoas -c pessoas --file .\pessoas.json --jsonArray
+
+  - na mongoShell:
+    * show dbs
+    * use pessoas
+    * db.pessoas.find({'morada.cidade':'Braga'}) (projeta todas as pessoas com a cidade==Braga)
+    * db.pessoas.find({'morada.cidade':'Braga'},{nome:1}) (apresenta apenas o campo pessoa e o campo id por default)
+    * db.pessoas.find({'morada.cidade':'Braga'},{nome:1,_id:0}) (mesmo resultado, tirando o id)
+    * db.pessoas.find({'atributos.fumador':true},{nome:1,_id:0}) (encontrar os fumadores)
+    * db.pessoas.find({'atributos.fumador':true},{nome:1,_id:0}).count() (devolve o numero de fumadores)
+    * use arq
+    * db.arq.find({tit:{$regex:/Maria/}},{tit:1,_id:0}) (todas as musicas com Maria no titulo)
+    * db.pessoas.find({idade:{$get:80}}).count() (contar o numero de pessoas com 80 anos)
+    * db.users.insertOne({username:'braz',level:'admin'}) (inserir novo utilizador admin)
+    * db.users.insertMany([{username:'maria',level:'consumer'},{username:'elis',level:'consumer'}]) (inserir multiplos utilizadores de uma so vez)
+    * db.users.updateOne({username:'braz'},{$set:{level:'producer'}}) (update de uma entrada, apenas altera os campos pedidos)
+    * db.users.updateMany({level:'consumer'},{$set:{level:'admin'}}) (update de todos as entradas com level=consumer para admin)
+    (delete funciona de forma semelhante)
+
+
+
+Passar dataset de alunos de JsonSerer para MongoDB
+
+db: RPCW2023
+collection : students
+
+
+
+
+TPC: 
+  fazer um site semelhante ao de alunos para o dataset de pessoas
+
+  -Schemas (incompletos)
+
+    var moradaSchema = new mongoose.Schema({
+        cidade : String,
+        distrito: String
+      })
+
+    var atributasSchema = new mongoose.Schema({
+      fumador : true,
+      gosta_cinema : Boolean,
+      gosta_viajar : Boolean,
+      acorda_cedo : Boolean,
+      gosta_ler : Boolean,
+      gosta_musica : Boolean,
+      gosta_comer : Boolean,
+      gosta_animais_estimacao : Boolean,
+      gosta_dancar : Boolean,
+      comida_favorita : String
+    })
+
+
+    var pessoaSchema = new mongoose.Schema({
+      nome: String,
+      idade:Number,
+      sexo:String,
+      morada: moradaSchema,
+      BI:String,
+      desportos: [String],
+      atributos: atributoSchema
+    })
+
+

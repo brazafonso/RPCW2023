@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE manifesto SYSTEM "manifesto.dtd">
+<manifesto>
+    <meta>
+        <titulo></titulo>
+        <subtitulo></subtitulo>
+        <data></data>
+        <autor>
+        </autor>
+        <uc></uc>
+    </meta>
+    <resumo>
+        <p></p>
+    </resumo>
+    <resultados>
+        <resultado path="dadsd" identificador="adaddsa">asdda</resultado>
+    </resultados>
+</manifesto>

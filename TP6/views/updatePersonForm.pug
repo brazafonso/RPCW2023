@@ -1,0 +1,151 @@
+extends layout 
+block content 
+
+    .w3-card-4
+        header.w3-container.w3-purple
+            h2 Person Form Update
+        form.w3-container(method="POST")
+            fieldset
+                legend Metadata
+                label 
+                    b Id*
+                input.w3-input.w3-round(type="text" name="id" value=p.id placeholder="-" readonly)
+                label 
+                    b Name*
+                input.w3-input.w3-round(type="text" name="nome" value=p.nome placeholder="-" required)
+                label 
+                    b Age*
+                input.w3-input.w3-round(type="number" name="idade" value=p.idade placeholder="-" required)
+                label 
+                    b Sexo*
+                    div.w3-container
+                        if p.sexo=='masculino'
+                            input(type="radio" id='masculino' name="sexo" value='masculino' checked required)
+                        else
+                            input(type="radio" id='masculino' name="sexo" value='masculino' required)
+                        label(for='masculino') male
+                        br
+                        if p.sexo=='feminino'
+                            input(type="radio" id='feminino' name="sexo" value='feminino' checked)
+                        else 
+                            input(type="radio" id='feminino' name="sexo" value='feminino')
+                        label(for='feminino') female
+                        br
+                        if p.sexo=='outro'
+                            input(type="radio" id='outro' name="sexo" value='outro' checked)
+                        else 
+                            input(type="radio" id='outro' name="sexo" value='outro')
+                        label(for='outro') other
+                        br
+                label 
+                    b BI*
+                input.w3-input.w3-round(type="text" name="BI" value=p.BI placeholder="-" required)
+                if p.morada
+                    label 
+                        b District*
+                    input.w3-input.w3-round(type="text" name="distrito" value=p.morada.distrito placeholder="-" required)
+                    label 
+                        b City
+                    input.w3-input.w3-round(type="text" name="cidade" value=p.morada.cidade placeholder="-")
+
+                label 
+                    b Profession*
+                input.w3-input.w3-round(type="text" name="profissao" value=p.profissao placeholder="-" required)
+                label 
+                    b Political Party
+                div.w3-container
+                    if p.partido_politico
+                        label Abreviation
+                        input.w3-input.w3-round(type="text" name="party_abbr" value=p['partido_politico']['party_abbr'] placeholder="-")
+                        label Name
+                        input.w3-input.w3-round(type="text" name="party_name" value=p['partido_politico']['party_name'] placeholder="-")
+                label 
+                    b Religion
+                input.w3-input.w3-round(type="text" name="religiao" value=p.religiao placeholder="-")
+                label 
+                    b Sports List
+                input.w3-input.w3-round(type="textarea" name="deportos" value=p.desportos placeholder="separate multiple values with ';'")
+                label 
+                    b Pets List
+                input.w3-input.w3-round(type="textarea" name="animais" value=p.animais placeholder="separate multiple values with ';'")
+                label 
+                    b Public figures List
+                input.w3-input.w3-round(type="textarea" name="figura_publica_pt" value=p.figura_publica_pt placeholder="separate multiple values with ';'")
+                label 
+                    b Car Brand
+                input.w3-input.w3-round(type="text" name="marca_carro" value=p.marca_carro placeholder="-")
+                label 
+                    b Favorite destinations List
+                input.w3-input.w3-round(type="textarea" name="destinos" value=p.destinos_favoritos placeholder="separate multiple values with ';'")
+                if p.atributos
+                    label 
+                        b Attributes List
+                        div.w3-container
+                            if p.atributos.fumador
+                                input.w3-round(type="checkbox" name="fumador" checked)
+                            else
+                                input.w3-round(type="checkbox" name="fumador")
+                            label Smoker
+                            br
+                            if p.atributos.gosta_cinema
+                                input.w3-round(type="checkbox" name="gosta_cinema" checked)
+                            else
+                                input.w3-round(type="checkbox" name="gosta_cinema")
+                            label Likes Cinema
+                            br
+                            if p.atributos.gosta_viajar
+                                input.w3-round(type="checkbox" name="gosta_viajar" checked)
+                            else
+                                input.w3-round(type="checkbox" name="gosta_viajar")
+                            label Likes to Travel
+                            br
+                            if p.atributos.acordar_cedo
+                                input.w3-round(type="checkbox" name="acorda_cedo" checked)
+                            else
+                                input.w3-round(type="checkbox" name="acorda_cedo")
+                            label Wakes Early
+                            br
+                            if p.atributos.gosta_ler
+                                input.w3-round(type="checkbox" name="gosta_ler" checked)
+                            else
+                                input.w3-round(type="checkbox" name="gosta_ler")
+                            label Likes to Read
+                            br
+                            if p.atributos.gosta_musica
+                                input.w3-round(type="checkbox" name="gosta_musica" checked)
+                            else
+                                input.w3-round(type="checkbox" name="gosta_musica")
+                            label Likes Music
+                            br
+                            if p.atributos.gosta_comer
+                                input.w3-round(type="checkbox" name="gosta_comer" checked)
+                            else
+                                input.w3-round(type="checkbox" name="gosta_comer")
+                            label Likes to Eat
+                            br
+                            if p.atributos.gosta_animais_estimacao
+                                input.w3-round(type="checkbox" name="gosta_animais_estimacao" checked)
+                            else
+                                input.w3-round(type="checkbox" name="gosta_animais_estimacao")
+                            label Likes Pets
+                            br
+                            if p.atributos.gosta_dancar
+                                input.w3-round(type="checkbox" name="gosta_dancar" checked)
+                            else
+                                input.w3-round(type="checkbox" name="gosta_dancar")
+                            label Likes to Dance
+                            br
+                            label Favorite Food
+                            input.w3-input.w3-round(type="text" name="comida_favorita" value=p.atributos.comida_favorita placeholder="-")
+
+                
+
+                
+                        
+                    
+            button.w3-btn.w3-purple.w3-mb-2(type="submit") Update
+               
+        footer.w3-container.w3-purple
+            h5 Generated by EngWeb2023 in #{d} - [#[a(href="/") Return]]
+                
+            
