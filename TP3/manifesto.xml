@@ -2,17 +2,27 @@
 <!DOCTYPE manifesto SYSTEM "manifesto.dtd">
 <manifesto>
     <meta>
-        <titulo></titulo>
-        <subtitulo></subtitulo>
-        <data></data>
+        <titulo>TPC 3</titulo>
+        <subtitulo>Página Web sobre dataset de pessoas</subtitulo>
+        <data>2023-03-01</data>
         <autor>
+            <nome>Gonçalo Braz Afonso</nome>
+            <id>a93178</id>
+            <gitlink>https://github.com/brazafonso/RPCW2023</gitlink>
         </autor>
-        <uc></uc>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
     </meta>
     <resumo>
-        <p></p>
+        <p>Criação duma página inicial com as seguintes operações disponíveis:</p>
+        <p>Listar as pessoas: apresenta uma lista de indivíduos numa tabela exibindo os campos id, nome, idade, sexo e cidade;</p>
+        <p>Ao clicar numa linha da tabela o sistema deverá responder com uma página HTML com toda a informação da pessoa;</p>
+        <p>Distribuição por sexo: o sistema deverá responder com uma página onde se possa consultar o número de pessoas de cada sexo e aceder à lista dessas pessoas;</p>
+        <p>Distribuição por desporto: o sistema deverá responder com uma página onde se possa consultar o número de pessoas que pratica cada um dos desportos (esta lista deverá estar ordenada descendentemente) e aceder à lista dessas pessoas;</p>
+        <p>Top10 de profissões: o sistema deverá responder com uma página onde se possa consultar as 10 profissões mais exercidas e aceder à lista de pessoas de cada uma das profissões.</p>
     </resumo>
     <resultados>
-        <resultado path="dadsd" identificador="adaddsa">asdda</resultado>
+        <resultado path="server.js" identificador="server">Script <i>JavaScript</i> para servidor de site sobre dataset pessoas.</resultado>
+        <resultado path="mypages.js" identificador="mypages">Script <i>JavaScript</i> com funções para devolver páginas web. Utilizado pelo servidor.</resultado>
+        <resultado path="util.js" identificador="util">Script <i>JavaScript</i> com funções auxiliares para processar os dados do dataset.</resultado>
     </resultados>
 </manifesto>

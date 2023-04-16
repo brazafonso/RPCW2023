@@ -2,17 +2,29 @@
 <!DOCTYPE manifesto SYSTEM "manifesto.dtd">
 <manifesto>
     <meta>
-        <titulo></titulo>
-        <subtitulo></subtitulo>
-        <data></data>
+        <titulo>TPC 4</titulo>
+        <subtitulo>Página Web em formato single page app, de uma toDo list</subtitulo>
+        <data>2023-03-01</data>
         <autor>
+            <nome>Gonçalo Braz Afonso</nome>
+            <id>a93178</id>
+            <gitlink>https://github.com/brazafonso/RPCW2023</gitlink>
         </autor>
-        <uc></uc>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
     </meta>
     <resumo>
-        <p></p>
+        <p>Create a Single Page Application (SPA) for toDo lists;</p>
+        <p>Main page should have 3 areas: insert form, toDo task list and resolved task list;</p>
+        <p>Task model is composed by: dateDued (deadline); who (who is supposed to do it) and what (task description);</p>
+        <p>Add edit and delete operations to both lists;</p>
+        <p>To implement edit and delete study howto make PUT and DELETE requests to json-server;</p>
+        <p>When a task is submitted through the form, it will appear in toDO list;</p>
+        <p>Add a button to each task in toDo list to change the status to solved (task should move form one list to the other);</p>
+        <p>Possible extras: maintain lists of task types, task descriptions, ..., that are preloaded into select components... make a nice interface, even responsive.</p>
     </resumo>
     <resultados>
-        <resultado path="dadsd" identificador="adaddsa">asdda</resultado>
+        <resultado path="server.js" identificador="server">Script <i>JavaScript</i> para servidor de site toDo list.</resultado>
+        <resultado path="taskpage.js" identificador="taskpage">Script <i>JavaScript</i> com funções para devolver páginas web. Utilizado pelo servidor.</resultado>
+        <resultado path="tasks.json" identificador="tasks">Json/dataset com as tasks. Modificado pelo servidor em tempo real.</resultado>
     </resultados>
 </manifesto>

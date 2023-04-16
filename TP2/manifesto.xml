@@ -2,17 +2,30 @@
 <!DOCTYPE manifesto SYSTEM "manifesto.dtd">
 <manifesto>
     <meta>
-        <titulo></titulo>
-        <subtitulo></subtitulo>
-        <data></data>
+        <titulo>TPC 2</titulo>
+        <subtitulo>Página Web sobre dataset de arqueossitios</subtitulo>
+        <data>2023-02-23</data>
         <autor>
+            <nome>Gonçalo Braz Afonso</nome>
+            <id>a93178</id>
+            <gitlink>https://github.com/brazafonso/RPCW2023</gitlink>
         </autor>
-        <uc></uc>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
     </meta>
     <resumo>
-        <p></p>
+        <p>O TPC consiste na criação dum servidor dos registos do dataset.</p>
+        <p>Sugere-se a sua divisão nas tarefas seguintes (apenas as 2 primeiras são obrigatórias):</p>
+        <p>Processamento do dataset com uma script em Python, usando os módulos BeautifulSoup e lxml, para desmembrar o dataset criando um ficheiro para cada registo: arq1.xml, arq2.xml, ..., arqn.xml</p>
+        <p>Criar um servidor node que sirva os registos:</p>
+        <p>localhost:porta/1 (envia o arq1.xml a quem fez o pedido)</p>
+        <p>localhost:porta/2 (envia o arq2.xml a quem fez o pedido)</p>
+        <p>localhost:porta/...</p>
+        <p>Criar a página "index.html" (usando Python) para ser servida quando alguém pede: "localhost:porta/";</p>
+        <p>Converter os arqx.xml em arqx.html, usando o BeautifulSoup ou outro e servir os registos em HTML.</p>
     </resumo>
     <resultados>
-        <resultado path="dadsd" identificador="adaddsa">asdda</resultado>
+        <resultado path="process_arq.py" identificador="process_arq">Script <i>Python</i> para processar informação de dataset arq e criar um html com ela.</resultado>
+        <resultado path="arq_site.html" identificador="arq_site">Página web com informação sobre o dataset arq.</resultado>
+        <resultado path="arq_server.js" identificador="arq_server">Servidor em script <i>JavaScript</i> para fornecer página web arq_site.html.</resultado>
     </resultados>
 </manifesto>

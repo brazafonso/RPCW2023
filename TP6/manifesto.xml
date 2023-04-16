@@ -2,17 +2,24 @@
 <!DOCTYPE manifesto SYSTEM "manifesto.dtd">
 <manifesto>
     <meta>
-        <titulo></titulo>
-        <subtitulo></subtitulo>
-        <data></data>
+        <titulo>TPC 6</titulo>
+        <subtitulo>Servidor do dataset pessoas, utilizando express e MongoDB</subtitulo>
+        <data>2023-03-01</data>
         <autor>
+            <nome>Gonçalo Braz Afonso</nome>
+            <id>a93178</id>
+            <gitlink>https://github.com/brazafonso/RPCW2023</gitlink>
         </autor>
-        <uc></uc>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
     </meta>
     <resumo>
-        <p></p>
+        <p>Recrear TPC3 com framework express e persistência de dados assegurada por MongoDB</p>
     </resumo>
     <resultados>
-        <resultado path="dadsd" identificador="adaddsa">asdda</resultado>
+        <resultado path="routes/index.js" identificador="index">Script <i>JavaScript</i> do servidor para tratar requests.</resultado>
+        <resultado path="controllers/person.js" identificador="person_api">Script <i>JavaScript</i> com funções para obter dados do dataset do mongoDB.</resultado>
+        <resultado path="models/person.js" identificador="person_model">Script <i>JavaScript</i> para criar Schema para trocar informação com mongoDB.</resultado>
+        <resultado path="views" identificador="views">Conjunto das páginas web em formato <i>pug</i>.</resultado>
+        <resultado path="pessoas.json" identificador="pessoas">Json/dataset com as pessoas. Modificado pelo servidor em tempo real.</resultado>
     </resultados>
 </manifesto>

@@ -2,17 +2,23 @@
 <!DOCTYPE manifesto SYSTEM "manifesto.dtd">
 <manifesto>
     <meta>
-        <titulo></titulo>
-        <subtitulo></subtitulo>
-        <data></data>
+        <titulo>TPC 1</titulo>
+        <subtitulo>Página Web sobre Hungria</subtitulo>
+        <data>2023-02-16</data>
         <autor>
+            <nome>Gonçalo Braz Afonso</nome>
+            <id>a93178</id>
+            <gitlink>https://github.com/brazafonso/RPCW2023</gitlink>
         </autor>
-        <uc></uc>
+        <uc>Representação e Processamento de Conhecimento na Web(RPCW)</uc>
     </meta>
     <resumo>
-        <p></p>
+        <p>página web (letra H)</p>
+        <p>completar o mapa virtual com as ligações de cada cidade (cada ligação deve ser um link com o texto a ser o nome da cidade e a indicação da distância).</p>
     </resumo>
     <resultados>
-        <resultado path="dadsd" identificador="adaddsa">asdda</resultado>
+        <resultado path="hungria.html" identificador="hungrua_html">Página web sobre "Hungria".</resultado>
+        <resultado path="site-dataset-mapa.py" identificador="script-mapa">Script em <i>Python</i> para o tratamento do dataset das cidades e gerar um site sobre esses dados.</resultado>
+        <resultado path="mapa_site.html" identificador="mapa_html">Página web com informação do dataset mapa.</resultado>
     </resultados>
 </manifesto>

@@ -4,7 +4,7 @@
 <!ELEMENT titulo (#PCDATA) >
 <!ELEMENT subtitulo (#PCDATA) >
 <!ELEMENT data (#PCDATA) >
-<!ELEMENT autor (#PCDATA) >
+<!ELEMENT autor (nome,id,gitlink) >
 <!ELEMENT uc (#PCDATA) >
 <!ELEMENT nome (#PCDATA) >
 <!ELEMENT id (#PCDATA) >
@@ -18,6 +18,7 @@ url CDATA #REQUIRED>
 <!ELEMENT b (#PCDATA|xref|i)* >
 <!ELEMENT i (#PCDATA|xref|b)* >
 <!ELEMENT resultados (resultado+) >
+<!ELEMENT resultado (#PCDATA|i|b)* >
 <!ATTLIST resultado
             path CDATA #REQUIRED
-            identificador CDATA #REQUIRED>
+            identificador CDATA #REQUIRED >
